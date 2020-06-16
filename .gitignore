@@ -16,4 +16,5 @@
 
 # Env var
 .env
+env.list
 

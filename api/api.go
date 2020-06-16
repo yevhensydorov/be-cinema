@@ -58,6 +58,9 @@ func GetMovies(w http.ResponseWriter, r *http.Request) {
 		fmt.Println("Error parsing json", err)
 	}
 
+	//Allow CORS here By * or specific origin
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(movies)
 }

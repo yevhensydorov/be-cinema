@@ -19,7 +19,7 @@ func init() {
 
 func main() {
 	r := mux.NewRouter()
-	r.HandleFunc("/movies/{movieName}", api.GetMovies)
+	r.HandleFunc("/movies/{movieName}", api.GetMovies).Methods("GET")
 	http.Handle("/", r)
 
 	fmt.Println("Server is running on port: 8080")
